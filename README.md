@@ -10,6 +10,6 @@ Go to \Contract folder and deploy the contract by running: `truffle migrate`
 Go to \Backend folder and start server by running: `nodemon app.js`
 
 ## Start Frontend
-To visualize the NFT, first copy `MyNFT.json` located in  Contract\build\contracts and paste it in Frontend\client\src\abi.
+To visualize the NFT, first copy `MyNFT.json` located in  `Contract\build\contracts` and paste it in `Frontend\src\abi` folder.
 
 Then, run: `npm start` and see the NFT.
