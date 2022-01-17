@@ -1,24 +1,22 @@
 import { ethers, Contract } from "ethers";
-import NFT from "./MyNFT.json";
+import NFT from "./abi/MyNFT.json";
 
 const getWeb3 = () =>
   new Promise((resolve, reject) => {
 
     window.addEventListener("load", async () => {
       const provider = new ethers.providers.JsonRpcProvider(
-        //"http://127.0.0.1:8545"
+        "http://127.0.0.1:8545"
       );
 
       const signer = provider.getSigner();
       
       //const accounts = await web3.eth.getAccounts();
-      const network = await provider.getNetwork();
-      console.log(NFT.networks[network.chainId]);
-      console.log(network.chainId);
+      //const network = await provider.getNetwork();
 
       // Get the contract instance.
       const nft = new Contract(
-        NFT.networks["1642036649405"].address,
+        NFT.networks[Object.keys(NFT.networks)[Object.keys(NFT.networks).length -1]].address,
         NFT.abi,
         signer
       );
